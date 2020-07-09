@@ -1,9 +1,18 @@
+import axios from 'axios'
 /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
-    https://api.github.com/users/<your name>
+    https://api.github.com/users/lyntechi
 */
-
+   axios.get('https://api.github.com/users/lyntechi')
+   .then((response) =>{
+    console.log(response)
+   })
+   .catch(error=>{
+     console.log(error)
+   })
+ 
+ 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
     github info! You will need to understand the structure of this
@@ -49,6 +58,47 @@ const followersArray = [];
       </div>
     </div>
 */
+const mainContainer = document.querySelector('.cards')
+const card = document.createElement('div')
+const urlImg = document.createElement('img')
+urlImg.src = '#'
+const cardInfo = document.createElement('div')
+const name = document.createElement('h3')
+const userName =document.createElement('p')
+const location = document.createElement('p')
+const profile = document.createElement('p')
+const followers = document.createElement('p')
+const following = document.createElement('p')
+const bio = document.createElement('p')
+const githubAddress = document.createElement('a')
+
+cardInfo.classList.add('card-info')
+card.classList.add('card')
+name.classList.add('name')
+userName.classList.add('username')
+githubAddress.textContent = 'hello'
+
+mainContainer.appendChild(card)
+card.appendChild(urlImg)
+card.appendChild(cardInfo)
+cardInfo.appendChild(name)
+cardInfo.appendChild(userName)
+cardInfo.appendChild(location)
+cardInfo.appendChild(profile)
+cardInfo.appendChild(followers)
+cardInfo.appendChild(following)
+cardInfo.appendChild(bio)
+// profile.prepend(githubAddress)
+
+name.textContent='users name'
+userName.textContent="users username"
+location.textContent="Location: Users Location"
+profile.textContent=`Profile:${githubAddress}`
+
+
+console.log(githubAddress)
+console.log(mainContainer)
+
 
 /*
   List of LS Instructors Github username's:
